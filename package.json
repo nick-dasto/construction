@@ -8,9 +8,13 @@
   },
   "devDependencies": {},
   "scripts": {
-    "predeploy": "cd client && npm run build",
-    "deploy": "cd client && gh-pages -d build",
-  },
+    "start": "node server",
+    "server": "nodemon server",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "install-client": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm install && npm run install-client && npm run build"  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nick-dasto/construction.git"
@@ -21,5 +25,5 @@
   "bugs": {
     "url": "https://github.com/nick-dasto/construction/issues"
   },
-  "homepage": "http://nick-dasto.github.io/construction"
+  "homepage": "https://github.com/nick-dasto/construction#readme"
 }
