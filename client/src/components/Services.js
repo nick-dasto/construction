@@ -44,15 +44,15 @@ function Services() {
         if(type === 'Subdivision Bonds') return <HouseIcon color='primary' className={classes.icon} />
     }
     return (
-        <Grid container spacing={3} className={classes.wrapper}>
+        <Grid container spacing={3} id='services' className={classes.wrapper}>
             {SERVICES.map((service) => (
-                <Grid item xs={12} sm={6} md={3}>
+                <Grid item xs={12} sm={6} md={3} key={service.title}>
                 <Paper elevation={5} className={classes.item}>
                     {getIcon(service.title)}
                     <Typography variant='h4'>{service.title}</Typography>
                     <List dense>
                         {service.items.map((item) => (
-                            <ListItem>{item}</ListItem>
+                            <ListItem key={service.items.indexOf(item)}>{item}</ListItem>
                         ))}
                     </List>
                 </Paper>

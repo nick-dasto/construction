@@ -1,12 +1,12 @@
 import React from 'react'
 import { Container, Typography, Paper, 
     Button, makeStyles } from '@material-ui/core'
-import image from "../assets/bkg.jpg"
+import image from "../assets/bkg3.jpg"
 
 const useStyles = makeStyles((theme) => ({
     banner:{
         backgroundColor: "#3e3e3e",
-        background: 'url(' + image + ') left center no-repeat',
+        background: 'url(' + image + ') center bottom no-repeat',
         backgroundSize: 'cover',
         height:400,
         position:'relative'
@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
 function Banner() {
     const classes = useStyles();
     return (
-        <Container maxWidth='xl' className={classes.banner}>
+        <Container maxWidth='xl' id='home' className={classes.banner}>
             <div className={classes.content}>
                 <Typography variant='h4' className={classes.text}>Construction Underwriters, LLC</Typography>
                 <Typography variant='h5' className={classes.text}>An Independent Surety Bond Agency</Typography>

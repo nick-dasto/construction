@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link, animateScroll as scroll } from "react-scroll";
 import { AppBar, Toolbar, Typography, ButtonGroup, 
     Button, makeStyles } from '@material-ui/core'
 
@@ -12,19 +13,43 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
-
 function Nav() {
     const classes = useStyles();
     return (
-        <AppBar position="static" color='default' className={classes.bar}>
+        <AppBar position="fixed" color='default' className={classes.bar}>
             <Toolbar>
                 <Typography variant="h4" className={classes.title}>Construction Underwriters LLC</Typography>
                 <ButtonGroup color="primary" variant="text">
-                    <Button>Home</Button>
-                    <Button>Services</Button>
-                    <Button>About</Button>
-                    <Button>Contact</Button>
-                    <Button>Forms</Button>
+                    <Button>
+                        <Link to="home" spy={true}
+                        smooth={true} offset={-70} duration={500}>
+                            Home
+                        </Link>
+                    </Button>
+                    <Button>
+                        <Link to="services" spy={true}
+                        smooth={true} offset={-70} duration={500}>
+                            Services
+                        </Link>
+                    </Button>
+                    <Button>
+                        <Link to="about" spy={true}
+                        smooth={true} offset={-70} duration={500}>
+                            About
+                        </Link>
+                    </Button>
+                    <Button>
+                    <Link to="contact" spy={true}
+                        smooth={true} offset={-70} duration={500}>
+                            Contact
+                        </Link>
+                    </Button>
+                    <Button>
+                        <Link to="forms" spy={true}
+                        smooth={true} offset={-70} duration={500}>
+                            Forms
+                        </Link>
+                    </Button>
                 </ButtonGroup>
             </Toolbar>
         </AppBar>
