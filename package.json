@@ -4,7 +4,9 @@
   "description": "Looking to help a friends family business",
   "main": "index.js",
   "dependencies": {
-    "gh-pages": "^3.1.0"
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
   },
   "devDependencies": {},
   "scripts": {
@@ -14,7 +16,8 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "install-client": "cd client && npm install",
     "build": "cd client && npm run build",
-    "heroku-postbuild": "npm install && npm run install-client && npm run build"  },
+    "heroku-postbuild": "npm install && npm run install-client && npm run build"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nick-dasto/construction.git"
