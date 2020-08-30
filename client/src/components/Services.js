@@ -10,6 +10,7 @@ const useStyles = makeStyles((theme) => ({
         padding: theme.spacing(2),
         minHeight: 400,
         width:'100vw',
+        maxWidth:'100%',
         backgroundColor: theme.palette.background.default,
         alignItems:'center',
         justifyContent: 'space-evenly'
@@ -44,7 +45,7 @@ function Services() {
         if(type === 'Subdivision Bonds') return <HouseIcon color='primary' className={classes.icon} />
     }
     return (
-        <Grid container spacing={3} id='services' className={classes.wrapper}>
+        <Grid container id='services' className={classes.wrapper}>
             {SERVICES.map((service) => (
                 <Grid item xs={12} sm={6} md={3} key={service.title}>
                 <Paper elevation={5} className={classes.item}>

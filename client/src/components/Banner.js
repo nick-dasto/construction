@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-scroll";
 import { Container, Typography, Paper, 
     Button, makeStyles } from '@material-ui/core'
 import image from "../assets/bkg3.jpg"
@@ -8,8 +9,10 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: "#3e3e3e",
         background: 'url(' + image + ') center bottom no-repeat',
         backgroundSize: 'cover',
-        height:400,
-        position:'relative'
+        height:500,
+        position:'relative',
+        width:'100vw',
+        maxWidth:'100%',
     },
     content:{
         padding: theme.spacing(3),
@@ -28,13 +31,18 @@ const useStyles = makeStyles((theme) => ({
 function Banner() {
     const classes = useStyles();
     return (
-        <Container maxWidth='xl' id='home' className={classes.banner}>
+        <div id='home' className={classes.banner}>
             <div className={classes.content}>
                 <Typography variant='h4' className={classes.text}>Construction Underwriters, LLC</Typography>
                 <Typography variant='h5' className={classes.text}>An Independent Surety Bond Agency</Typography>
-                <Button variant="contained" color="primary">Contact Us</Button>
+                <Button variant="contained" color="primary">
+                <Link to="contact" spy={true}
+                        smooth={true} offset={-70} duration={500}>
+                            Contact Us
+                        </Link>
+                </Button>
             </div>
-        </Container>
+        </div>
     )
 }
 

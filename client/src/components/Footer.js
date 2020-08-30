@@ -13,7 +13,9 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         color: theme.palette.text.primary,
         paddingTop: theme.spacing(3),
-        minHeight:150
+        minHeight:150,
+        width:'100vw',
+        maxWidth:'100%'
     },
     info:{
         display: 'flex',
@@ -43,7 +45,7 @@ function Footer() {
     const classes = useStyles();
 
     return (
-        <Container maxWidth='xl' className={classes.wrapper}>
+        <div className={classes.wrapper}>
             <div className={classes.address}>
                 <LocationOnIcon style={{alignSelf:'center'}} className={classes.color} />
                 <Typography variant='h6'>5501 Twin Knolls Road</Typography>
@@ -63,7 +65,7 @@ function Footer() {
                 <Typography variant='h6'>Tel (443) 470-5055</Typography>
                 <Typography variant='h6'>Fax (443) 470-7058</Typography>
             </div>
-        </Container>
+        </div>
     )
 }
 
