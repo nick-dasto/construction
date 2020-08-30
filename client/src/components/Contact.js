@@ -26,6 +26,11 @@ const useStyles = makeStyles((theme) => ({
     map:{
         marginTop: theme.spacing(2),
         marginBottom: theme.spacing(2),
+        paddingLeft: theme.spacing(2),
+        [theme.breakpoints.down('sm')]:{
+            height: 500,
+            paddingLeft: '0'
+        }   
     }
 }))
 
@@ -45,7 +50,7 @@ function Contact() {
 
     return (
         <Grid container id='contact' className={classes.wrapper}>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} md={6}>
                 <Paper className={classes.container}>
                     <Typography variant='h4'>Contact Us</Typography>
                     <Typography variant='body2'>Please feel free to reach out to us with any questions or requests, we will gladly get back to you within 24 business hours. Thank you!</Typography>
@@ -58,15 +63,13 @@ function Contact() {
                     </form>
                 </Paper>
             </Grid>
-            <Grid item xs={12} sm={6} className={classes.map}>
-                <div style={{ width: "100%", height: "100%" }}>
-                    <WrappedMap
-                        googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places`}
-                        loadingElement={<div style={{ height: `100%` }} />}
-                        containerElement={<div style={{ height: `100%` }} />}
-                        mapElement={<div style={{ height: `100%` }} />}
-                    />
-                </div>
+            <Grid item xs={12} md={6} className={classes.map}>
+                <WrappedMap
+                    googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places`}
+                    loadingElement={<div style={{ height: `100%` }} />}
+                    containerElement={<div style={{ height: `100%` }} />}
+                    mapElement={<div style={{ height: `100%` }} />}
+                />
             </Grid>
         </Grid>
     )

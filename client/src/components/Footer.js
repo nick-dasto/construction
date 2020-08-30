@@ -1,5 +1,6 @@
 import React from 'react'
-import { Container, Typography, makeStyles, IconButton, ButtonGroup } from '@material-ui/core'
+import { Divider, Typography, makeStyles, IconButton,
+     ButtonGroup } from '@material-ui/core'
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
@@ -15,7 +16,10 @@ const useStyles = makeStyles((theme) => ({
         paddingTop: theme.spacing(3),
         minHeight:150,
         width:'100vw',
-        maxWidth:'100%'
+        maxWidth:'100%',
+        [theme.breakpoints.down("sm")]:{
+            flexDirection:'column'
+        }
     },
     info:{
         display: 'flex',
@@ -38,6 +42,14 @@ const useStyles = makeStyles((theme) => ({
     },
     color:{
         color:theme.palette.secondary.main
+    },
+    divider:{
+        height:'2px', 
+        width:'60%',
+        margin:'1rem auto',
+        [theme.breakpoints.up("sm")]:{
+            display:'none'
+        }
     }
 }))
 
@@ -52,14 +64,16 @@ function Footer() {
                 <Typography variant='h6'>Suite 104</Typography>
                 <Typography variant='h6'>Columbia, MD 21045</Typography>
             </div>
+            <Divider flexItem className={classes.divider} />
             <div className={classes.info}>
                 <Typography variant='body1'>© 2020 by Construction Underwriters, LLC</Typography>
                 <Typography variant='h6'>Connect with us!</Typography>
-                <ButtonGroup>
-                    <IconButton><FacebookIcon className={classes.color} /></IconButton>
-                    <IconButton><LinkedInIcon className={classes.color} /></IconButton>
+                <ButtonGroup color='secondary'>
+                    <IconButton><FacebookIcon /></IconButton>
+                    <IconButton><LinkedInIcon /></IconButton>
                 </ButtonGroup>
             </div>
+            <Divider flexItem className={classes.divider} />
             <div className={classes.phone}>
                 <PhoneIcon style={{alignSelf:'center'}} className={classes.color} />
                 <Typography variant='h6'>Tel (443) 470-5055</Typography>
