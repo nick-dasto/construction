@@ -1,6 +1,6 @@
-import React from 'react';
-import { createMuiTheme, ThemeProvider, 
-  Container, makeStyles } from '@material-ui/core'
+import React, {useRef, useEffect} from 'react';
+import {TweenMax} from 'gsap';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core'
 import Nav from './components/Nav'
 import Banner from './components/Banner'
 import Services from './components/Services'
@@ -21,8 +21,15 @@ const theme = createMuiTheme({
   },
 });
 function App() {
+  let app = useRef(null);
+
+  useEffect(() => {
+    TweenMax.to(app, 0, {css: {visibility: 'visible'}})
+  }, [])
+
   return (
-    <ThemeProvider theme={theme}>
+    <div className="app" ref={el => app = el}>
+      <ThemeProvider theme={theme}>
         <Nav />
         <Banner />
         <Services />
@@ -30,7 +37,8 @@ function App() {
         <Contact />
         <Forms />
         <Footer />
-    </ThemeProvider>
+      </ThemeProvider>
+    </div>
   );
 }
 
